@@ -1,0 +1,15 @@
+<% provide :page_title, "Edit answer" %>
+<% currently_at %>
+<div class="container">
+  <h1 class="mb-4">Редактирование ответа</h1>
+  <%= render 'shared/errors', object: @answer %>
+
+  <%= form_with model: [@question,@answer] do |f| %>
+    <div class="mb-3 row">
+      <div class="col-sm-10">
+        <%= f.text_area :body, class: 'form-control', placeholder: "Ответ" %>
+      </div>
+    </div>
+    <%= f.submit "Сохранить", class: 'btn btn-primary'%>
+  <% end %>
+</div>
